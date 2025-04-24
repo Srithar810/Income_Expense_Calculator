@@ -32,11 +32,26 @@ function loadTransactionDetails(transaction){
         ${transaction.description}
         <span> ${sign} ${Math.abs(transaction.amount)}</span>
         <button class="btn-del" onclick="removeTrans(${transaction.id})"> X </button>
+        <button class="btn-edit" onclick="editTrans(${transaction.id})"> ✎ </button>
     `;
     trans.appendChild(item);
 }
 // loadTransactionDetails(transaction);
 
+//update the income and expense
+function editTrans(id){
+    const transaction = transactions.find(transaction => transaction.id === id);
+    description.value =     transaction.description;
+    amount.value = transaction.amount;
+
+    transactions =transactions.filter(transaction => transaction.id !== id);
+
+    updateLocalStorange();
+    config();
+}
+
+
+// remove the income and expanse 
 function removeTrans(id){
     if (confirm("Are you sure you want to delete transaction?")){
         transactions = transactions.filter((transaction) => transaction.id != id);
@@ -86,6 +101,8 @@ function config(filter = 'all'){
     updateAmount();
 }
 
+
+//create the income and expense
 function addTransaction(e){
     e.preventDefault();
     if(description.value.trim() == "" || amount.value.trim() == ""){
