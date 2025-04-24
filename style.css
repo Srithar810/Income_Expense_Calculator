@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:wght@400;700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+/* background-color: aqua; */
+    font-family: "Raleway", sans-serif;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(84, 87, 87);
+    display: grid;
+    place-items: center;
+
+}
+
+
+
+.container{
+    width: 900px;
+    height: 600px;
+    background-color: rgb(202, 216, 216);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    display: flex;
+    user-select: none;
+}
+
+
+/* left */
+.ledger{
+    background-color: rgb(43, 36, 28);
+    padding: 20px;
+    color: white;
+    flex: 1;
+}
+
+.ledger h2,
+.ledger h4,
+.ledger h1{
+    font-weight: 400;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.ledger h2{
+    text-transform: uppercase;
+    color: #feca57;
+}
+
+.inc-exp-container div{
+    /* background-color: red; */
+    text-align: center;
+    text-transform: uppercase;
+    flex: 1;
+    /* margin: 20px; */
+    padding: 10px;
+}
+
+.inc-exp-container{
+    display: flex;
+    padding: 5px;
+    gap: 10px;
+}
+
+.inc-exp-container div p{
+    font-size: 22px;
+}
+
+.inc-exp-container div.inc{
+    color: rgb(106, 189, 106);
+    border: 3px solid  rgb(106, 189, 106) ;
+}
+
+.inc-exp-container div.exp{
+    color: rgb(214, 28, 28);
+    border: 3px solid rgb(214, 28, 28);
+}
+
+#form{
+    padding: 5px;
+    margin-top: 20px;
+}
+
+.form-control{
+    margin-top: 10px;
+}
+
+label{
+    display: inline-block;
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+input[type='text'],
+input[type='number']{
+ border: 1px solid #dedede;
+ display: block;
+ width: 100%;
+ font-size: 16px;
+ padding: 10px;
+ outline: none;
+ border-radius: 3px;
+}
+
+.btn {
+    background-color: #2c86de;
+    color: white;
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+    padding: 10px;
+    gap: 10px;
+    font-size: 20px;
+    border: 10px;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+/* right */
+.transaction{
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y:scroll ;
+}
+
+.transaction h3{
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f1f1f1;
+    margin-top: 25px;
+    margin-bottom: 5px;
+}
+
+.trans{
+    list-style-type: none;
+}
+.filter-options{
+    margin: 10px 0;
+    display: flex;
+    gap: 15px;
+    font-weight: 600;
+}
+
+.filter-options input{
+    margin-right: 5px;
+}
+
+.trans li{
+    background-color: #fff;
+    color: black;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    padding: 10px 10px 10px 60px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    position: relative;
+    cursor: pointer;
+}
+
+.btn-del{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-weight: 600;
+    color: #fff;
+    background-color: #e7413c;
+    border: none;
+    font-size: 18px;
+    line-height: 20px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.trans li.inc{
+    border-left: 5px solid rgb(106, 189, 106);
+}
+
+.trans li.exp{
+    border-left: 5px solid rgb(214, 28, 28);
+}
+
+.trans li:hover .btn-del{
+    opacity: 1;
+}
+
+::-webkit-scrollbar{
+    width: 5px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #2e86de;
+    border-radius: 8px;
+}
+
+/* system view */
+@media (max-width:78px){
+    .container{
+        padding: 10px;
+    }
+
+    .ledger h2{
+        font-size: 20px;
+    }
+
+    .ledger h2{
+        font-size: 20px;
+    }
+
+    .ledger h1{
+        font-size: 26px;
+    }
+
+    .label{
+        font-size: 16px;
+    }
+
+    input[type='text'],
+    input[type='number'],
+    .btn{
+        font-size: 14px;
+        padding: 8px;
+    }
+
+}
+
+/* mobile view */
+@media(max-width:480px){
+    .container{
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        padding: 8px;
+    }
+
+    .ledger,
+    .transaction{
+        padding: 10px;
+    }
+
+    .ledger h2{
+        font-size: 18px;
+    }
+
+    .ledger h1{
+        font-size: 22px;
+    }
+
+    .btn{
+        font-size: 16px;
+    }
+
+    .trans li{
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .btn-del{
+        width: 16px;
+        height: 16px;
+        font-size: 14px;
+        line-height: 16px;
+    }
+}
+
+
