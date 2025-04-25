@@ -3,7 +3,7 @@
 A simple web application to track your income and expenses, calculate your balance, and visualize your financial transactions.
 Create a fully functional Income Expense Calculator using HTML, CSS, and JavaScript. This project should allow the users to add, edit, and delete income and expense entries, providing an overview of their financial status. The project will implement CRUD (Create, Read, Update, Delete) operations to manage the data.
 
-
+click here  https://income-expensecalculator.netlify.app/
 
 ## Features ✨
 
@@ -19,14 +19,8 @@ Create a fully functional Income Expense Calculator using HTML, CSS, and JavaScr
 - HTML5
 - CSS3
 - JavaScript (Vanilla JS)
-
-
 - No external dependencies
 
-## Installation & Usage 🚀
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/your-username/income-expense-calculator.git
 
  
