@@ -5,6 +5,9 @@ const inc_amt = document.querySelector("#inc-amt");
 const exp_amt = document.querySelector("#exp-amt");
 const trans = document.querySelector("#trans");
 const form = document.querySelector("#form");
+const type = document.querySelector("#type");
+const resetBtn = document.querySelector("#reset-btn");
+
 
 // const dummyData =[
 //     {id:1,description:"salary",amount:35000},
@@ -111,7 +114,7 @@ function addTransaction(e){
         const transaction = {
             id:uniqueId(),
             description:description.value,
-            amount:+amount.value,
+            amount: type.value === "income" ? +amount.value : -Math.abs(amount.value),
         };
         transactions.push(transaction);
         loadTransactionDetails(transaction);
@@ -145,3 +148,15 @@ function uniqueId(){
     return Math.floor(Math.random()* 1000000)
 };
 
+
+
+resetBtn.addEventListener("click", () =>{
+    if (confirm("Are you sure you want to reset all transactions?")){
+        transactions = []
+        updateLocalStorange();
+        config();
+        description.value = "";
+        amount.value = "";
+        type.value = "income";
+    }
+});

@@ -11,8 +11,15 @@
         <!-- left -->
         <div class="ledger">
             <h2>Income Expense Calculator</h2>
-            <h4>Your Balance</h4>
-            <h1 id="balance">₹ 0.00</h1>
+            <div class="ledger-left">
+                <div class="left-side">
+                    <h4>Your Balance</h4>
+                <h1 id="balance">₹ 0.00</h1>
+                </div>
+
+                <button  type="button" class="reset-btn" id="reset-btn">Reset All</button>
+            </div>
+            
             <div class="inc-exp-container">
                 <div class="inc">
                     <h4>Income</h4>
@@ -26,6 +33,15 @@
 
                 <!-- form  -->
                 <form  id="form" action="#">
+                    <div class="form-control">
+                        <label for="type">Transaction Type</label>
+                        <select id="type">
+                            <option value="income">Income</option>
+                            <option value="Expance">Expance</option>
+                        </select>
+                    </div>
+
+
                     <!-- description -->
                     <div class="form-control">
                         <label for="desc">Description</label>
